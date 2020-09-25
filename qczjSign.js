@@ -105,27 +105,6 @@ const qichezhijia="汽车之家APP";
 //++++++++++++++++++++++++++++++++
 
 
-const $XidN = XidN();
-
-const logs=0;//设置0关闭日志,1开启日志
-
-
-
-//++++++++++++++++++++++++++++++++-
-
-
-const qichezhijia="汽车之家APP";
-
-
-
-
-
-
-
-
-//++++++++++++++++++++++++++++++++
-
-
 function main()
 {
 XidN_degin();}
@@ -350,6 +329,3 @@ function XidN() {
     }
     return { isRequest, isQuanX, isSurge, notify, write, read, get, post, end }
 };
-
-
-
