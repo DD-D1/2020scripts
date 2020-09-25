@@ -12,26 +12,26 @@
  
 
 surge:本地
-京东读书签到 = type=http-request,pattern=^https:\/\/jdread-api\.jd\.com\/*,requires-body=1,max-size=0,script-path=jddsSign.js
+京东读书签到 = type=http-request,pattern=^https:\/\/jdread-api\.jd\.com\/*,requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/dingxinuo/XidNdd/master/jddsSign.js
 
-定时 京东读书签到 = type=cron,cronexp=0 10 0 * * *,script-path=jddsSign.js
+定时 京东读书签到 = type=cron,cronexp=0 10 0 * * *,script-path= https://raw.githubusercontent.com/dingxinuo/XidNdd/master/jddsSign.js
 
 
 
 圈x:本地
-^https:\/\/jdread-api\.jd\.com\/* url script-request-body jddsSign.js
+^https:\/\/jdread-api\.jd\.com\/* url script-request-header https://raw.githubusercontent.com/dingxinuo/XidNdd/master/jddsSign.js
 
-定时 0 10 0 * * * jddsSign.js, tag=京东读书签到, enabled=true
+定时 0 10 0 * * * https://raw.githubusercontent.com/dingxinuo/XidNdd/master/jddsSign.js, tag=京东读书签到, enabled=true
 
 
 
 
 
 loon:本地
-http-request ^https:\/\/jdread-api\.jd\.com\/* script-path=jddsSign.js, requires-body=true, timeout=10, tag=京东读书签到
+http-request ^https:\/\/jdread-api\.jd\.com\/* script-path= https://raw.githubusercontent.com/dingxinuo/XidNdd/master/jddsSign.js, requires-body=true, timeout=10, tag=京东读书签到
 
 
-定时 cron "0 10 0 * * *" script-path=jddsSign.js, 
+定时 cron "0 10 0 * * *" script-path= https://raw.githubusercontent.com/dingxinuo/XidNdd/master/jddsSign.js, 
 
 
 
