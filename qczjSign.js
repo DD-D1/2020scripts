@@ -3,36 +3,45 @@
  @𝐗𝐢𝐝𝐍 𝐃𝐃    感谢红鲤鱼大佬
 //++++++++++++++++++++++++++++++++-
 
+
+[红包]我的邀请码19570916，填了咱俩都拿钱[红包]
+
+
+loon签到要2个主机名 要自己抓包获取每个人不一样  抓包找到,fasthome/taskcenter/init,这个包会有一个类似于,183.146.18.877,这样的添加就好了
+
 汽车之家极速版 签到可以获得金币兑换现金
 
 圈x获取不到ck就把body改成header
 
 打开软件签到获取ck 签过到可能获取不到ck
 
- 
-
-surge:本地
-汽车之家极速版 = type=http-request,pattern=^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/*,requires-body=1,max-size=0,script-path=qczjSign.js
-
-定时 汽车之家极速版 = type=cron,cronexp=0 10 0 * * *,script-path=qczjSign.js
-
-
-
-圈x:本地
-^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* url script-request-body qczjSign.js
-
-
-定时 0 10 0 * * * qczjSign.js, tag=京东读书签到, enabled=true
 
 
 
 
 
-loon:本地
-http-request ^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* script-path=qczjSign.js, requires-body=true, timeout=10, tag=汽车之家极速版
+surge:
+汽车之家极速版 = type=http-request,pattern=^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js
+
+定时 汽车之家极速版 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js
 
 
-定时 cron "0 10 0 * * *" script-path=qczjSign.js 
+
+圈x:
+^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js
+
+
+定时 0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js, tag=京东读书签到, enabled=true
+
+
+
+
+
+loon:
+http-request ^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js, requires-body=true, timeout=10, tag=汽车之家极速版
+
+
+定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js 
 
 
 
