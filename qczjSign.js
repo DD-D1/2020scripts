@@ -9,7 +9,7 @@
 
 loon签到要2个主机名 要自己抓包获取每个人不一样  抓包找到,fasthome/taskcenter/init,这个包会有一个类似于,183.146.18.877,这样的添加就好了
 
-汽车之家极速版 签到可以获得金币兑换现金,
+汽车之家极速版 签到可以获得金币兑换现金
 
 圈x获取不到ck就把body改成header
 
@@ -20,14 +20,14 @@ loon签到要2个主机名 要自己抓包获取每个人不一样  抓包找到
 
 
 
-surge:
+surge:远程
 汽车之家极速版 = type=http-request,pattern=^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js
 
 定时 汽车之家极速版 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js
 
 
 
-圈x:
+圈x:远程
 ^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js
 
 
@@ -37,7 +37,7 @@ surge:
 
 
 
-loon:
+loon:远程
 http-request ^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js, requires-body=true, timeout=10, tag=汽车之家极速版
 
 
