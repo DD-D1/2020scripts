@@ -12,9 +12,9 @@
  
 
 surge:本地
-京东读书签到 = type=http-request,pattern=^https:\/\/jdread-api\.jd\.com\/*,requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/XidNDD/2020scripts/master/jddsSign.js
+京东读书签到 = type=http-request,pattern=^https:\/\/jdread-api\.jd\.com\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/jddsSign.js
 
-定时 京东读书签到 = type=cron,cronexp=0 10 0 * * *,script-path= https://raw.githubusercontent.com/XidNDD/2020scripts/master/jddsSign.js
+定时 京东读书签到 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/jddsSign.js
 
 
 
@@ -28,10 +28,10 @@ surge:本地
 
 
 loon:本地
-http-request ^https:\/\/jdread-api\.jd\.com\/* script-path= https://raw.githubusercontent.com/XidNDD/2020scripts/master/jddsSign.js, requires-body=true, timeout=10, tag=京东读书签到
+http-request ^https:\/\/jdread-api\.jd\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/jddsSign.js, requires-body=true, timeout=10, tag=京东读书签到
 
 
-定时 cron "0 10 0 * * *" script-path= https://raw.githubusercontent.com/XidNDD/2020scripts/master/jddsSign.js, 
+定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/jddsSign.js, 
 
 
 
