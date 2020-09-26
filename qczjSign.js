@@ -185,7 +185,7 @@ var qczjsdbd=$XidN.read("qczjsdbdname");
 if (logs==1)console.log(data)
 var obj=JSON.parse(data);
 if(obj.returncode== 0)
-result2="时段奖励✅,奖励10金币";
+result2="时段奖励✅,+10💰金币";
 else if(obj.returncode== 111)
 result2="说明,"+obj.message;
 
