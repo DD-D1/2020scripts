@@ -20,35 +20,35 @@
 
 
 
-surge:本地
-柚子快报 = type=http-request,pattern=^http?:\/\/hongbao\.youzikuaibao\.com\/youzi\/*,requires-body=1,max-size=0,script-path=yzkbSign.js
+surge:远程
+柚子快报 = type=http-request,pattern=^http?:\/\/hongbao\.youzikuaibao\.com\/youzi\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/yzkbSign.js
 
-定时 柚子快报 = type=cron,cronexp=0 10 0 * * *,script-path=yzkbSign.js
+定时 柚子快报 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/yzkbSign.js
 
 
 
-圈x:本地
+圈x:远程
 签到获取ck
-^http?:\/\/hongbao\.youzikuaibao\.com\/youzi\/* url script-request-body yzkbSign.js
+^http?:\/\/hongbao\.youzikuaibao\.com\/youzi\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/yzkbSign.js
 
 
 
 
 
-定时 0 10 0 * * * yzkbSign.js, tag= 柚子快报, enabled=true
+定时 0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/yzkbSign.js, tag= 柚子快报, enabled=true
 
 
 
 
 
-loon:本地
+loon:远程
 签到获取ck
-http-request ^http?:\/\/hongbao\.youzikuaibao\.com\/youzi\/* script-path=yzkbSign.js, requires-body=true, timeout=10, tag=柚子快报
+http-request ^http?:\/\/hongbao\.youzikuaibao\.com\/youzi\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/yzkbSign.js, requires-body=true, timeout=10, tag=柚子快报
 
 
 
 
-定时 cron "0 10 0 * * *" script-path=yzkbSign.js
+定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/yzkbSign.js
 
 
 
@@ -242,7 +242,6 @@ function XidN() {
     }
     return { isRequest, isQuanX, isSurge, notify, write, read, get, post, end }
 };
-
 
 
 
