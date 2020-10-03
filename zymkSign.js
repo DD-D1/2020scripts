@@ -151,7 +151,7 @@ resolve(result2);
 
 
 
-function XidN_yzkb() {
+function XidN_zymk() {
 
   if ($request.headers) {
 
@@ -187,7 +187,7 @@ function getRandom(start, end, fixed = 0) {
 }
 
 if ($XidN.isRequest) {
-  XidN_yzkb()
+  XidN_zymk()
   $XidN.end()
 } else {
   main();
