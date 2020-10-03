@@ -131,7 +131,7 @@ var zymkbd=$XidN.read("zymkbdname");
 if (logs==1)console.log(data)
 var obj=JSON.parse(data);
 if(obj.status== 0)
-result2="✅"+obj.sign_message+",获得"+obj.message+",连续签"+obj.data.continue_days+"天";
+result2="✅"+obj.sign_message+",获得"+obj.daytreat.message+",连续签"+obj.data.continue_days+"天";
 else
 if(obj.status== 2)
 result2="签到说明:"+obj.msg;
