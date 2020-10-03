@@ -28,23 +28,23 @@
 
 
 surge:远程
-汽车之家极速版 = type=http-request,pattern=^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js
+汽车之家极速版 = type=http-request,pattern=^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
 
-定时 汽车之家极速版 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js
+定时 汽车之家极速版 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
 
 
 
 圈x:远程
 签到获取ck
-^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js
+^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
 
 时段奖励ck
-^http:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/coin\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js
+^http:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/coin\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
 
 
 
 
-定时 0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js, tag= 汽车之家极速版, enabled=true
+定时 0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js, tag= 汽车之家极速版, enabled=true
 
 
 
@@ -52,10 +52,10 @@ surge:远程
 
 loon:远程
 签到获取ck
-http-request ^https?:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js, requires-body=true, timeout=10, tag=汽车之家极速版
+http-request ^https?:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js, requires-body=true, timeout=10, tag=汽车之家极速版
 
 时段获取ck
-http-request ^http:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/coin\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js, requires-body=true, timeout=10, tag=汽车之家极速版
+http-request ^http:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/coin\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js, requires-body=true, timeout=10, tag=汽车之家极速版
 
 时段获取ck上面的获取不到换这个
 http-request ^http:\/\/填写\.你抓\.到的\.数字\/fasthome\/coin\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js, requires-body=true, timeout=10, tag=汽车之家极速版
@@ -63,7 +63,7 @@ http-request ^http:\/\/填写\.你抓\.到的\.数字\/fasthome\/coin\/* script-
 
 
 
-定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js 
+定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js 
 
 
 
@@ -382,7 +382,6 @@ function XidN() {
     }
     return { isRequest, isQuanX, isSurge, notify, write, read, get, post, end }
 };
-
 
 
 
