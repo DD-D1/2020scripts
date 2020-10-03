@@ -18,35 +18,35 @@
 
 
 
-surge:本地
-知音漫客 = type=http-request,pattern=^https:\/\/getconfig-globalapi\.zymk\.cn\/app_api\/*,requires-body=1,max-size=0,script-path=zymkSign.js
+surge:远程
+知音漫客 = type=http-request,pattern=^https:\/\/getconfig-globalapi\.zymk\.cn\/app_api\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/zymkSign.js
 
-定时 知音漫客 = type=cron,cronexp=0 10 0 * * *,script-path=zymkSign.js
+定时 知音漫客 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/zymkSign.js
 
 
 
-圈x:本地
+圈x:远程
 签到获取ck
-^https:\/\/getconfig-globalapi\.zymk\.cn\/app_api\/* url script-request-body zymkSign.js
+^https:\/\/getconfig-globalapi\.zymk\.cn\/app_api\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/zymkSign.js
 
 
 
 
 
-定时 0 10 0 * * * zymkSign.js, tag= 知音漫客, enabled=true
+定时 0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/zymkSign.js, tag= 知音漫客, enabled=true
 
 
 
 
 
-loon:本地
+loon:远程
 签到获取ck
-http-request ^https:\/\/getconfig-globalapi\.zymk\.cn\/app_api\/* script-path=zymkSign.js, requires-body=true, timeout=10, tag=知音漫客
+http-request ^https:\/\/getconfig-globalapi\.zymk\.cn\/app_api\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/zymkSign.js, requires-body=true, timeout=10, tag=知音漫客
 
 
 
 
-定时 cron "0 10 0 * * *" script-path=zymkSign.js
+定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/zymkSign.js
 
 
 
@@ -240,7 +240,6 @@ function XidN() {
     }
     return { isRequest, isQuanX, isSurge, notify, write, read, get, post, end }
 };
-
 
 
 
