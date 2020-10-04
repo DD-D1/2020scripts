@@ -35,7 +35,7 @@ surge:远程
 
 
 圈x:远程
-签到获取ck
+签到和现金获取ck
 ^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
 
 时段奖励ck
@@ -51,7 +51,7 @@ surge:远程
 
 
 loon:远程
-签到获取ck
+签到和现金获取ck
 http-request ^https?:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js, requires-body=true, timeout=10, tag=汽车之家极速版
 
 时段获取ck
