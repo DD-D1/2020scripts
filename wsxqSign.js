@@ -18,35 +18,35 @@
 
 
 
-surge:本地
-微商星球 = type=http-request,pattern=^https:\/\/api\.momosyb\.com\/(v6|v1)\/(fans|user)\/*,requires-body=1,max-size=0,script-path=wsxqSign.js
+surge:远程
+微商星球 = type=http-request,pattern=^https:\/\/api\.momosyb\.com\/(v6|v1)\/(fans|user)\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/wsxqSign.js
 
-定时 微商星球 = type=cron,cronexp=0 10 0 * * *,script-path=wsxqSign.js
+定时 微商星球 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/wsxqSign.js
 
 
 
-圈x:本地
+圈x:远程
 签到获取ck
-^https:\/\/api\.momosyb\.com\/(v6|v1)\/(fans|user)\/* url script-request-body wsxqSign.js
+^https:\/\/api\.momosyb\.com\/(v6|v1)\/(fans|user)\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/wsxqSign.js
 
 
 
 
 
-定时 0 10 0 * * * wsxqSign.js, tag= 微商星球, enabled=true
+定时 0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/wsxqSign.js, tag= 微商星球, enabled=true
 
 
 
 
 
-loon:本地
+loon:远程
 签到获取ck
-http-request ^https:\/\/api\.momosyb\.com\/(v6|v1)\/(fans|user)\/* script-path=wsxqSign.js, requires-body=true, timeout=10, tag=微商星球
+http-request ^https:\/\/api\.momosyb\.com\/(v6|v1)\/(fans|user)\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/wsxqSign.js, requires-body=true, timeout=10, tag=微商星球
 
 
 
 
-定时 cron "0 10 0 * * *" script-path=wsxqSign.js
+定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/wsxqSign.js
 
 
 
@@ -488,7 +488,6 @@ function XidN() {
     }
     return { isRequest, isQuanX, isSurge, notify, write, read, get, post, end }
 };
-
 
 
 
