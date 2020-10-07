@@ -5,25 +5,22 @@
 
 趣客有礼小程序
 
-打开小程序获取ck 签到获取 转盘抽奖 红包抽奖
+打开小程序获取ck 签到获取 转盘抽奖 红包抽奖 现金获取 广告视频获取 共5个地方
 2020-10-2更新
-趣客更新视频奖励 每日任务详情
-如果获取不到视频ck 关掉去广告的规则
+趣客更新视频奖励 每日任务
+如果获取不到视频ck 关掉去广告的规则 或者换掉圈x视频加载出来 在打开圈x获取
 
 
+surge:远程
+趣客有礼小程序 = type=http-request,pattern=^https:\/\/choujiang-server\.deering\.cn\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qkyltask.js
 
 
-
-surge:本地
-趣客有礼小程序 = type=http-request,pattern=^https:\/\/choujiang-server\.deering\.cn\/*,requires-body=1,max-size=0,script-path=qkylck.js
-
-
-圈x:本地
-^https:\/\/choujiang-server\.deering\.cn\/* url script-request-body qkylck.js
+圈x:远程
+^https:\/\/choujiang-server\.deering\.cn\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qkyltask.js
 
 
-loon:本地
-http-request ^https:\/\/choujiang-server\.deering\.cn\/* script-path=qkylck.js, requires-body=true, timeout=10, tag=趣客有礼小程序
+loon:远程
+http-request ^https:\/\/choujiang-server\.deering\.cn\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qkyltask.js, requires-body=true, timeout=10, tag=趣客有礼小程序
 
 
 
@@ -398,7 +395,6 @@ function XidN() {
     }
     return { isRequest, isQuanX, isSurge, notify, write, read, get, post, end }
 };
-
 
 
 
