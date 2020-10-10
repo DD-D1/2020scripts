@@ -8,6 +8,7 @@
 说明:
 
 海德汇一城小程序 签到可以获得积分兑换物品
+群友需要就写了 不是羊毛
 
 圈x获取不到ck就把body改成header
 
@@ -20,35 +21,35 @@
 
 
 
-surge:本地
-海德汇一城 = type=http-request,pattern=^https:\/\/wox2019\.woxshare\.com\/*,requires-body=1,max-size=0,script-path=hdhycSign.js
+surge:远程
+海德汇一城 = type=http-request,pattern=^https:\/\/wox2019\.woxshare\.com\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/hdhycSign.js
 
-定时 海德汇一城 = type=cron,cronexp=0 10 0 * * *,script-path=hdhycSign.js
+定时 海德汇一城 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/hdhycSign.js
 
 
 
-圈x:本地
+圈x:远程
 签到获取ck
-^https:\/\/wox2019\.woxshare\.com\/* url script-request-body hdhycSign.js
+^https:\/\/wox2019\.woxshare\.com\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/hdhycSign.js
 
 
 
 
 
-定时 0 10 0 * * * hdhycSign.js, tag=海德汇一城, enabled=true
+定时 0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/hdhycSign.js, tag=海德汇一城, enabled=true
 
 
 
 
 
-loon:本地
+loon:远程
 签到获取ck
-http-request ^https:\/\/wox2019\.woxshare\.com\/* script-path=hdhycSign.js, requires-body=true, timeout=10, tag=海德汇一城
+http-request ^https:\/\/wox2019\.woxshare\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/hdhycSign.js, requires-body=true, timeout=10, tag=海德汇一城
 
 
 
 
-定时 cron "0 10 0 * * *" script-path=hdhycSign.js
+定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/hdhycSign.js
 
 
 
@@ -272,7 +273,6 @@ function XidN() {
     }
     return { isRequest, isQuanX, isSurge, notify, write, read, get, post, end }
 };
-
 
 
 
