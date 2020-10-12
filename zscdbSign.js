@@ -358,7 +358,7 @@ function XidN() {
         if (isQuanX) isRequest ? $done({}) : ""
         if (isSurge) isRequest ? $done({}) : $done()
     }
-    return { isRequest, isQuanX, isSurge, notify, write, read, get, post, end }
+    return { isRequest, isQuanX, isSurge, notify, write, read, get, post, end, done }
 };
 
 
