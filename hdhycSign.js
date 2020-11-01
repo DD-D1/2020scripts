@@ -51,6 +51,10 @@ http-request ^https:\/\/wox2019\.woxshare\.com\/* script-path=https://raw.github
 
 定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/hdhycSign.js
 
+小火箭:远程
+海德汇一城 = type=http-request,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/hdhycSign.js,pattern= ^https:\/\/wox2019\.woxshare\.com\/*,max-size=131072,requires-body=true,timeout=10,enable=true
+
+海德汇一城 = type=cron,script-path=hdhycSign.js,cronexpr="0 07 16 * * *",timeout=10,enable=true
 
 
 
