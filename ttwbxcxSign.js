@@ -101,7 +101,7 @@ XidN_degin();}
 async function XidN_degin()
  {
 let a0=await XidN_Sign();
- log(dd,"",a0);
+ log(dd,"",a0);$XidN.time();
    
 }
 
@@ -123,19 +123,22 @@ function XidN_Sign()
 var createSignurl=$XidN.read("createSignurlname");
 var createSignhd=$XidN.read("createSignhdname");
 var createSignbd=$XidN.read("createSignbdname");
-  const createSign={
+  const llUrl1={
       url:createSignurl,
       headers:JSON.parse(createSignhd),
       body:createSignbd,
       timeout:60000};
-  $XidN.post(createSign,function(error, response, data) {
+  $XidN.post(llUrl1,function(error, response, data) {
 if (logs==1)console.log(data)
 var obj=JSON.parse(data);
 if(obj.data.success== "true")
-result2="【签到成功✅】"+"奖励💸现金";
+result2="【签到成功✅】"+"奖励"+toDecimal2(obj.data.amount)+"💸现金";
 else
 if(obj.data.success== "false")
 result2="【签到失败⚠️】重复签到";
+else
+if(obj.code== "40101")
+result2="【签到失败⚠️】"+obj.message;
 else
 result2="签到失败获取cookie";
 
@@ -150,7 +153,7 @@ var createSignhd=$XidN.read("createSignhdname");
 if (logs==1)console.log(data)
 var obj=JSON.parse(data);
 if(obj.code== "200")
-result2+="【当前账户信息】"+",连续签"+obj.data.cumulativeSignCount+"天,"+obj.data.currentWing+"元宝";
+result2+="【当前账户信息】"+toDecimal2(obj.data.cumulativeMoney)+"💸现金"+",连续签"+obj.data.cumulativeSignCount+"天,"+obj.data.currentWing+"元宝";
 
 
 
@@ -203,6 +206,23 @@ if (so==true)
 }  
 }
 
+function toDecimal2(x){
+    if (x != '.'){
+      var f = Math.round(x - 0) / 100;
+      var s = f.toString();
+      var rs = s.indexOf('.');
+      if (rs <= 0) {
+        rs = s.length;
+        s += '.';
+      }
+      while (s.length <= rs + 2) {
+        s += '0';
+      }
+      return s;
+    }else{
+      return '0.00';
+    }
+  };
 
  
 
@@ -225,6 +245,7 @@ if ($XidN.isRequest) {
   main();
   $XidN.end()
  }
+
 
 
 
