@@ -101,7 +101,7 @@ XidN_degin();}
 async function XidN_degin()
  {
 let a0=await XidN_Sign();
- log(dd,"",a0);$XidN.time();
+ log(dd,"",a0);
    
 }
 
