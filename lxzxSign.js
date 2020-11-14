@@ -24,9 +24,9 @@
 
 
 小火箭:签到获取ck
-联想智选 = type=http-request,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign%202.js,pattern=^https:\/\/api\.club\.lenovo\.cn\/,max-size=131072,requires-body=true,timeout=10,enable=true
+联想智选 = type=http-request,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign.js,pattern=^https:\/\/api\.club\.lenovo\.cn\/,max-size=131072,requires-body=true,timeout=10,enable=true
 
-定时 联想智选 = type=cron,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign%202.js,cronexpr="0 0 0 * * *",timeout=10,enable=true
+定时 联想智选 = type=cron,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign.js,cronexpr="0 0 0 * * *",timeout=10,enable=true
 
 
 
@@ -34,18 +34,18 @@
 
 
 surge:签到获取ck
-联想智选 = type=http-request,pattern=^https:\/\/api\.club\.lenovo\.cn\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign%202.js
+联想智选 = type=http-request,pattern=^https:\/\/api\.club\.lenovo\.cn\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign.js
 
-定时 联想智选 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign%202.js
+定时 联想智选 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign.js
 
 
 
 
 
 圈x:签到获取ck
-^https:\/\/api\.club\.lenovo\.cn\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign%202.js
+^https:\/\/api\.club\.lenovo\.cn\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign.js
 
-定时 0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign%202.js, tag=联想智选, enabled=true
+定时 0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign.js, tag=联想智选, enabled=true
 
 
 
@@ -53,10 +53,10 @@ surge:签到获取ck
 
 
 loon:签到获取ck
-http-request ^https:\/\/api\.club\.lenovo\.cn\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign%202.js, requires-body=true, timeout=10, tag=联想智选
+http-request ^https:\/\/api\.club\.lenovo\.cn\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign.js, requires-body=true, timeout=10, tag=联想智选
 
 
-定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign%202.js 
+定时 cron "0 10 0 * * *" script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/lxzxSign.js 
 
 
 
