@@ -11,6 +11,7 @@
 时段奖励是每个小时一次奖励
 2020,10,2 增加现金提现
 提现才能获取到ck
+2020.11.15增加普通版签到 我只测试了loon能用
 
 说明:
 
@@ -24,19 +25,32 @@
 
 这个版本就增加提现功能 你感觉没啥用就不用换
 
+⚠️⚠️⚠️注意有2个MITM
+
+
+
+小火箭:签到获取ck
+汽车之家极速版 = type=http-request,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js,pattern=^https:\/\/(mobile|activity)\.app\.autohome\.com\.cn\/*,max-size=131072,requires-body=true,timeout=10,enable=true
+
+时段奖励ck
+汽车之家极速版 = type=http-request,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js,pattern=^http:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/coin\/*,max-size=131072,requires-body=true,timeout=10,enable=true
+
+定时 汽车之家极速版 = type=cron,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js,cronexpr="0 0 0 * * *",timeout=10,enable=true
+
+
 
 
 
 surge:远程
-汽车之家极速版 = type=http-request,pattern=^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
+汽车之家极速版 = type=http-request,pattern=^https:\/\/(mobile|activity)\.app\.autohome\.com\.cn\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
 
 定时 汽车之家极速版 = type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
 
 
 
 圈x:远程
-签到和现金获取ck
-^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
+签到获取ck
+^https:\/\/(mobile|activity)\.app\.autohome\.com\.cn\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
 
 时段奖励ck
 ^http:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/coin\/* url script-request-body https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js
@@ -51,15 +65,11 @@ surge:远程
 
 
 loon:远程
-签到和现金获取ck
-http-request ^https?:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js, requires-body=true, timeout=10, tag=汽车之家极速版
+签到获取ck
+http-request ^https:\/\/(mobile|activity)\.app\.autohome\.com\.cn\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js, requires-body=true, timeout=10, tag=汽车之家极速版
 
 时段获取ck
 http-request ^http:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/coin\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjsign.js, requires-body=true, timeout=10, tag=汽车之家极速版
-
-时段获取ck上面的获取不到换这个
-http-request ^http:\/\/填写\.你抓\.到的\.数字\/fasthome\/coin\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js, requires-body=true, timeout=10, tag=汽车之家极速版
-
 
 
 
@@ -68,8 +78,7 @@ http-request ^http:\/\/填写\.你抓\.到的\.数字\/fasthome\/coin\/* script-
 
 
 
-MITM= mobile.app.autohome.com.cn
-
+MITM= mobile.app.autohome.com.cn, activity.app.autohome.com.cn
 
 
 
@@ -93,7 +102,7 @@ const logs=0;//设置0关闭日志,1开启日志
 //++++++++++++++++++++++++++++++++-
 
 
-const qichezhijia="汽车之家APP";
+const dd="汽车之家APP";
 
 
 
@@ -116,8 +125,9 @@ async function XidN_degin()
  {
 let a0=await XidN_Sign();
 let a1=await XidN_qczjSign();
-let a2=await XidN_qczjxjSign();
- log(qichezhijia,"",a0+a1+a2);
+let a2=await XidN_qczjsdSign();
+let a3=await XidN_qczjxjSign();
+ papa(dd,"",a0+a1+a2+a3);
    
 }
 
@@ -148,13 +158,14 @@ var qczjbd=$XidN.read("qczjbdname");
 if (logs==1)console.log(data)
 var obj=JSON.parse(data);
 if(obj.result.list[0].sign.result.signalter== 1)
-result2="✅签到"+",获得"+obj.result.list[0].nowcoin+"💰金币";
+result2="✅签到"+",获得"+obj.result.list[0].nowcoin+"💰金币"+",连续签到"+obj.result.list[0].sign.result.signdaycount+"天"+",现金"+obj.result.list[0].nowmoney+"元💸\n";
 else if(obj.result.list[0].sign.result.signalter== 0)
 result2="重复签到⚠️"+",连续签到"+obj.result.list[0].sign.result.signdaycount+"天",
-result2+=",现金"+obj.result.list[0].nowmoney+"元💸"+",今日"+obj.result.list[0].nowcoin+"💰金币";
+result2+=",现金"+obj.result.list[0].nowmoney+"元💸"+",今日"+obj.result.list[0].nowcoin+"💰金币\n";
 else
-result2="签到失败获取cookie";
-result2="<"+result1+">"+result2+"\n";
+result2="签到失败❎";
+
+result2="<"+result1+">"+result2+"";
 console.log(result2);
 resolve(result2);
 })
@@ -167,6 +178,85 @@ resolve(result2);
    
 
 function XidN_qczjSign()
+  {
+  return  new Promise((resolve, reject) => {
+    
+   var result1="普通版打卡✍🏻";
+   var result2="";
+ 
+var signdetailurl=$XidN.read("signdetailurlname");
+var signdetailhd=$XidN.read("signdetailhdname");
+
+  const llUrl1={
+      url:signdetailurl,
+      headers:JSON.parse(signdetailhd),
+      timeout:60000};
+  $XidN.get(llUrl1,function(error, response, data) {
+if (logs==1)console.log(data)
+var obj=JSON.parse(data);
+if(obj.result.signwindowflag== 1)
+result2="✅签到"+",获得"+obj.result.signcoincount+"💰金币"+"连续签到"+obj.result.weekday+"天";
+else if(obj.result.signwindowflag== 0)
+result2="重复签到⚠️"+",连续签到"+obj.result.weekday+"天";
+
+
+
+
+
+
+  const llUrl2={
+      url:"https://activity.app.autohome.com.cn/acti818/signin/index?version=10.11.6&pm=1&time=1600663203838&auth=f27ae2eb2ea6414588369cc399b783110b973ca6&userid=194460838&deviceid=d5fa7e607eb3d8ba76ed03990c63168a26325827&timer=1600663203839",
+      headers:JSON.parse(signdetailhd),
+      timeout:60000};
+  $XidN.get(llUrl2,function(error, response, data) {
+if (logs==1)console.log(data)
+var obj=JSON.parse(data);
+if(obj.returncode== 0)
+result2+=",累计获得"+obj.result.coincount+"💰金币"+",现金累计"+obj.result.coinmoney+"💸元✨";
+
+
+
+
+
+
+
+const llUrl3={
+      url:"https://activity.app.autohome.com.cn/acti818/signin/lottery?deviceId=d5fa7e607eb3d8ba76ed03990c63168a26325827&auth=f27ae2eb2ea6414588369cc399b783110b973ca6&userid=194460838&deviceid=d5fa7e607eb3d8ba76ed03990c63168a26325827&timer=1601741612968",
+      headers:JSON.parse(signdetailhd),
+      timeout:60000};
+  $XidN.get(llUrl3,function(error, response, data) {
+if (logs==1)console.log(data)
+var obj=JSON.parse(data);
+if(obj.returncode== 0)
+result2+="签到抽大奖"+",获得"+obj.result.coin+"💰金币";
+else
+if(obj.returncode== 10003)
+result2+="签到抽大奖"+",失败:"+obj.message;
+
+else
+if(obj.returncode== 10002)
+result2+="签到抽大奖"+",失败:"+obj.message;
+
+else
+result2="签到失败❎";
+
+
+
+
+result2="<"+result1+">"+result2+"\n";
+console.log(result2);
+resolve(result2);
+})
+})
+})
+})
+}
+
+
+
+
+
+function XidN_qczjsdSign()
   {
   return  new Promise((resolve, reject) => {
     
@@ -208,8 +298,6 @@ resolve(result2);
 
 
 
-
-
 function XidN_qczjxjSign()
   {
   return  new Promise((resolve, reject) => {
@@ -233,10 +321,11 @@ if(obj.returncode== 0)
 result2="提现成功✅,详情看明细";
 else if(obj.returncode== -12)
 result2="失败:"+obj.message;
+else if(obj.returncode== -103)
+result2="失败:"+obj.message;
 else if(obj.returncode== -13)
 result2="失败:"+obj.message+obj.daydes+obj.time+"点补充库存";
-else if(obj.returncode== -11)
-result2="失败:"+obj.message;
+
 
 else
 result2="领取失败获取cookie";
@@ -252,6 +341,11 @@ resolve(result2);
 })
 })
 }
+
+
+
+
+
 
 
 
@@ -280,7 +374,7 @@ var so= $XidN.write(md_bd,"qczjbdname");
 var bo= $XidN.write(JSON.stringify(md_hd),"qczjhdname");
 
 if (ao==true&&bo==true&&so==true) 
- log(qichezhijia,"[获取极速版签到数据]","✅成功");}
+ papa(dd,"[获取极速版签到数据]","✅成功");}
 
 
 else
@@ -292,7 +386,11 @@ var so= $XidN.write(md_bd,"qczjsdbdname");
 var bo= $XidN.write(JSON.stringify(md_hd),"qczjsdhdname");
 
 if (ao==true&&bo==true&&so==true) 
- log(qichezhijia,"[获取时段奖励数据]","✅成功");}
+ papa(dd,"[获取时段奖励数据]","✅成功");}
+
+
+
+
 
 else
 if(urlval.indexOf("fasthome/coin/cointowallet")>=0)
@@ -303,12 +401,18 @@ var so= $XidN.write(md_bd,"qczjxjbdname");
 var bo= $XidN.write(JSON.stringify(md_hd),"qczjxjhdname");
 
 if (ao==true&&bo==true&&so==true) 
- log(qichezhijia,"[获取现金提现数据]","✅成功");}
+ papa(dd,"[获取现金提现数据]","✅成功");}
 
 
+else
+if(urlval.indexOf("acti818/signin/signdetail?")>=0)
+{
 
+ var ao= $XidN.write(urlval,"signdetailurlname");
+var bo= $XidN.write(JSON.stringify(md_hd),"signdetailhdname");
 
-
+if (ao==true&&bo==true) 
+ papa(dd,"[获取普通版数据]","✅成功");}
 
 
 }  
@@ -319,7 +423,7 @@ if (ao==true&&bo==true&&so==true)
 
 
 
-function log(x,y,z){
+function papa(x,y,z){
 
 $XidN.notify(x,y,z);}
 function getRandom(start, end, fixed = 0) {
