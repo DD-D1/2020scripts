@@ -259,8 +259,10 @@ function XidN() {
     const isRequest = typeof $request != "undefined"
     const isSurge = typeof $httpClient != "undefined"
     const isQuanX = typeof $task != "undefined"
+    var link = {"open-url": "https://github.com", 
+    "media-url" : "https://img01.sogoucdn.com/app/a/100520146/451bff539e596f3f04be6f7d230c68cc"};
     const notify = (title, subtitle, message) => {
-        if (isQuanX) $notify(title, subtitle, message,{'openUrl':'wechat://','mediaUrl':'https://img01.sogoucdn.com/app/a/100520146/451bff539e596f3f04be6f7d230c68cc'})
+        if (isQuanX) $notify(title, subtitle, message,link)
         if (isSurge) $notification.post(title, subtitle, message,{'openUrl':'wechat://','mediaUrl':'https://img01.sogoucdn.com/app/a/100520146/451bff539e596f3f04be6f7d230c68cc'})
     }
     const write = (value, key) => {
