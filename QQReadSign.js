@@ -20,7 +20,7 @@ QQ阅读APP 签到可以获🉐️金币兑换现金
 
 打开软件签到获取ck 签过到可能获取不到ck
 
-⚠️看视频领金币 首页签到 2处获取ck的地方⚠️ 2个主机名
+⚠️看视频领金币 账户信息 2处获取ck的地方⚠️ 2个主机名
 
 
 
@@ -113,7 +113,7 @@ console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTi
  function checkinSign() {
   return new Promise((resolve) => {
       let Url = {
-        url : $.getdata('checkinsignurl'),
+        url : "https://commontgw6.reader.qq.com/v7_5_1/checkin?isresign=0",
         headers : JSON.parse($.getdata('checkinheader')),
      
       }
@@ -291,11 +291,10 @@ dd+="【账号信息查询】"+"当前账号"+$.quer.data.coinBalance+"💰金�
 
 
 function qedssign() {
-  if ($request.url.indexOf("v7_5_1/checkin?") > -1) {
-    $.setdata($request.url,'checkinsignurl')
+  if ($request.url.indexOf("getAcctInfo") > -1) {
     $.setdata(JSON.stringify($request.headers),'checkinheader')
     
-    $.msg($.name,"","[获取签到数据]✅成功")}
+    $.msg($.name,"","[获取信息数据]✅成功")}
 
 else
 if ($request.url.indexOf("watchVideo") > -1) {
