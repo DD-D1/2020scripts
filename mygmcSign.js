@@ -140,6 +140,10 @@ else
 if(obj.code== 400)
 result2="签到失败说明:"+obj.msg;
 else
+if(obj.code== 500)
+result2="签到失败说明:"+obj.msg;
+
+else
 result2="签到失败获取cookie";
 
 var Recordgeturl=$XidN.read("Recordgeturlname");
