@@ -153,8 +153,8 @@ var createSignhd=$XidN.read("createSignhdname");
 if (logs==1)console.log(data)
 var obj=JSON.parse(data);
 if(obj.code== "200")
-result2+="【当前账户信息】"+toDecimal2(obj.data.cumulativeMoney)+"💸现金"+",连续签"+obj.data.cumulativeSignCount+"天,"+obj.data.currentWing+"元宝";
 
+result2+="【当前账户信息】"+(Number(obj.data.cumulativeMoney)/100).toFixed(2)+"💸现金"+",连续签"+obj.data.cumulativeSignCount+"天,"+obj.data.currentWing+"元宝";
 
 
 result2=""+result1+""+result2+"\n";
@@ -199,30 +199,9 @@ if (so==true)
 
 
 
-
-
-
-
 }  
 }
 
-function toDecimal2(x){
-    if (x != '.'){
-      var f = Math.round(x - 0) / 100;
-      var s = f.toString();
-      var rs = s.indexOf('.');
-      if (rs <= 0) {
-        rs = s.length;
-        s += '.';
-      }
-      while (s.length <= rs + 2) {
-        s += '0';
-      }
-      return s;
-    }else{
-      return '0.00';
-    }
-  };
 
  
 
