@@ -113,7 +113,7 @@ console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTi
          body: $.getdata('qiandaobody')
      
       }
-      $.get(Url, async (err, resp, data) => {
+      $.post(Url, async (err, resp, data) => {
         try {
           data = JSON.parse(data);
           if(logs==1)console.log(data)
