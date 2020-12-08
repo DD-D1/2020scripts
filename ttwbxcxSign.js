@@ -132,7 +132,9 @@ var createSignbd=$XidN.read("createSignbdname");
 if (logs==1)console.log(data)
 var obj=JSON.parse(data);
 if(obj.data.success== "true")
-result2="【签到成功✅】"+"奖励"+toDecimal2(obj.data.amount)+"💸现金";
+
+result2="【签到成功✅】"+"奖励"+(parseInt(obj.data.amount)/100).toFixed(2)+"💸现金";
+
 else
 if(obj.data.success== "false")
 result2="【签到失败⚠️】重复签到";
