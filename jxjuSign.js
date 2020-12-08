@@ -142,6 +142,8 @@ dd +=$.qiandao.msg;
 if ($.qiandao.code == 002) 
 dd +="签到失败:"+$.qiandao.msg;
 
+if ($.qiandao.code == 001) 
+dd +=$.qiandao.msg;
 
   $.msg($.name,"",dd)
 }
