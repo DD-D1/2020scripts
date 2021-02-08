@@ -744,10 +744,7 @@ function dfttsign() {
 
 if ($request.url.indexOf("news_take_s") > 0) {
     
- const dftoutiaoheader = JSON.stringify($request.headers);
-if(dftoutiaoheader)
-$.setdata(dftoutiaoheader,"dftoutiaoheader" + $.idx);
-
+ 
 const dftoutiaobody = $request.body;
 if(dftoutiaobody)
     $.setdata(dftoutiaobody,"dftoutiaobody" + $.idx);
@@ -755,6 +752,10 @@ if(dftoutiaobody)
 
 
 if ($request.url.indexOf("task/center/task_index") > 0) {
+
+const dftoutiaoheader = JSON.stringify($request.headers);
+if(dftoutiaoheader)
+$.setdata(dftoutiaoheader,"dftoutiaoheader" + $.idx);
 
 const dftoubody = $request.body;
 if(dftoubody)
