@@ -7,7 +7,7 @@
 "apps": [{
 "id": "xiaopusign",
 "name": "笑谱APP",
-"keys": ["iboxpayheader","tokenbody","iboxpayheader2","tokenbody","iboxpayheader3","tokenbody3","iboxpayheader4","tokenbody4","iboxpayheader5","tokenbody5","iboxpayheader6","tokenbody6","iboxpayheader7","tokenbody7","iboxpayheader8","tokenbody8","iboxpayheader9","tokenbody9","iboxpayheader10","tokenbody10"],
+"keys": ["iboxpayheader","tokenbody","giboxpayheader2","tokenbody","iboxpayheader3","tokenbody3","iboxpayheader4","tokenbody4","iboxpayheader5","tokenbody5","iboxpayheader6","tokenbody6","iboxpayheader7","tokenbody7","iboxpayheader8","tokenbody8","iboxpayheader9","tokenbody9","iboxpayheader10","tokenbody10"],
 "author": "@dd",
 "settings": [{
 "id": "xiaopuSuffix",
@@ -191,7 +191,7 @@
   {
    "id": "ForestFarm",
    "name": "我的林场APP",
-   "keys": ["Farmslist","Farmslistkey"],
+   "keys": ["Farmslist"],
    "author": "@dd",
    "settings": [{
    "id": "Farmslist",
