@@ -194,7 +194,7 @@
    "keys": ["FarmList"],
    "author": "@dd",
    "settings": [{
-   "id": "Farmslist",
+   "id": "FarmList",
    "name": "Cookie数据",
    "val": "1",
    "type": "textarea",
