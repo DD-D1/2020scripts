@@ -27,8 +27,8 @@ async function Cookie() {
       let seatNo = FarmList.length;
       for (let i = 0, len = seatNo; i < len; i++) {
         let acObj = FarmList[i] || [];
-        if (acObj.Url) {
-          if (acObj.Url == userId) {
+        if (acObj.uid) {
+          if (acObj.uid == userId) {
             seatNo = i;
             status = 0;
             break;
