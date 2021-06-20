@@ -191,7 +191,7 @@
   {
    "id": "ForestFarm",
    "name": "我的林场APP",
-   "keys": ["Farmslist"],
+   "keys": ["FarmList"],
    "author": "@dd",
    "settings": [{
    "id": "Farmslist",
