@@ -215,7 +215,7 @@
    "settings": [
            {
            "id": "CtnoNolog",
-            "val": "true",
+            "val": "",
              "name": "是否通知",
              "type": "boolean",
              "desc": "开启时脚本执行完发系统通知,关闭只打印日志"
