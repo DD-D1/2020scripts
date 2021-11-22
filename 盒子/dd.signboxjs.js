@@ -251,6 +251,7 @@
    "icons": ["https://raw.githubusercontent.com/DD-D1/2020scripts/master/Forest/wdlcs.png","https://raw.githubusercontent.com/DD-D1/2020scripts/master/Forest/wdlcs.png"],
    "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/Forest/ForestFarm.js"
   
+
 },
 {
    "id": "ttl",
@@ -268,6 +269,25 @@
    "repo": "https://github.com/DD-D1/2020scripts/blob/master/Forest/ForestFarm.js",
    "icons": ["https://i.loli.net/2021/11/15/YEix4VaP9nyStge.jpg","https://i.loli.net/2021/11/15/YEix4VaP9nyStge.jpg"],
    "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/Forest/ForestFarm.js"
-  }]
-  }
+ 
+  },
+ {
+    "id": "laishan",
+    "name": "来闪APP",
+    "keys": ["laishanck"],
+    "author": "@dd",
+    "settings": [{
+    "id": "laishanck",
+    "name": "Cookie数据",
+    "val": "1",
+    "type": "textarea",
+    "desc": "JSON格式"
+    }
+    ],
+    "repo": "https://github.com/DD-D1/2020scripts/blob/master/Forest/ForestFarm.js",
+    "icons": ["https://i.loli.net/2021/11/22/rjM8lVHq5dhnDNt.jpg","https://i.loli.net/2021/11/22/rjM8lVHq5dhnDNt.jpg"],
+    "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/Forest/ForestFarm.js"
+   }]
+   }
+
  
