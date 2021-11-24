@@ -312,7 +312,7 @@
        ],
        "repo": "https://github.com/DD-D1/2020scripts/blob/master/Forest/ForestFar.js",
        "icons": ["https://i.loli.net/2021/11/23/KWiSdPnQkDxHzur.jpg","https://i.loli.net/2021/11/23/KWiSdPnQkDxHzur.jpg"],
-       "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/Forest/ForestFar.js"
+       "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/jztt.js"
       }]
       }
    
