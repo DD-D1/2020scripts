@@ -331,7 +331,7 @@
           "repo": "https://github.com/DD-D1/2020scripts/blob/master/Forest/ForestFarm.js",
           "icons": ["https://i.loli.net/2021/11/28/sLCY2UzvhDOtfx9.jpg","https://i.loli.net/2021/11/28/sLCY2UzvhDOtfx9.jpg"],
           "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/Forest/ForestFarm.js"
-         ]}
+         }]
          }
    
    
